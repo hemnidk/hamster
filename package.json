@@ -1,0 +1,30 @@
+{
+  "name": "hamster",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "prebuild": "rimraf dist",
+    "postbuild": "tsc-alias",
+    "build": "tsc",
+    "nodemon": "nodemon dist/main.js",
+    "dev": "concurrently \"tsc --watch\" \"tsc-alias --project tsconfig.build.json --watch\" \"npm run nodemon\"",
+    "lint": "eslint \"src/**/*.{js,mjs,cjs,ts,mts}\"",
+    "lint:fix": "eslint \"src/**/*.{js,mjs,cjs,ts,mts}\" --fix",
+    "exec": "node dist/main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.2",
+    "rimraf": "^5.0.7",
+    "tsc-alias": "^1.8.10",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5"
+  }
+}
