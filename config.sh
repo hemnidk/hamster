@@ -1,12 +1,6 @@
 #!/bin/sh
 
-# Prompt user for input
-echo "Enter a telegram miniapps access_token:"
+RED='\033[0;31m'
+echo "${RED}ENTER HAMSTER accessToken!!!:"
 read accessToken
-
-
-# Create .env file and write the environment variable and its value
 echo "AUTH_TOKEN=$accessToken" > .env
-
-echo "Created .env file with contents:"
-cat .env
